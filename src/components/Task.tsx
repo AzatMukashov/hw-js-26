@@ -1,26 +1,23 @@
 import React from "react";
 
-interface Task {
-    newText: string;
-    onAddTask: () => void;
+interface Props {
+    text: string;
+    onHandleClick: () => void;
 }
 
-const Task: React.FC<Task> = ({newText, onAddTask}) => {
+const AddTaskForm: React.FC<Props> = ({text, onHandleClick}) => {
     return (
-        <div className="task">
-            <textarea
-                className="task__textarea"
-                rows={1}
-                autoFocus
-                placeholder="Add new task"
-            >{newText}</textarea>
-            <button
-                className="task__submit"
-                type="button"
-                onClick={onAddTask}>Add
-            </button>
+        <div className="add-task-form">
+            <div className="add-task-form__form">
+                <span className="add-task-form__text">{text}</span>
+                <button
+                    className="add-task-form__submit"
+                    type="button"
+                    onClick={onHandleClick}
+                >delete</button>
+            </div>
         </div>
     );
 };
 
-export default Task;
+export default AddTaskForm;
