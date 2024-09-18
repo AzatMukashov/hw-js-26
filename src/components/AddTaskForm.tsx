@@ -1,9 +1,7 @@
 import React, {useState} from "react";
 
 interface AddTask {
-    // newText: string;
     onAddTask: (text: string) => void;
-    // onTextChange: (text: string) => void;
 
 }
 
