@@ -1,7 +1,7 @@
-import {useState} from 'react'
-import './App.css'
-import AddTaskForm from "./components/AddTaskForm.tsx";
-import Task from "./components/Task.tsx";
+import {useState} from 'react';
+import './App.css';
+import AddTaskForm from './components/AddTaskForm.tsx';
+import Task from './components/Task.tsx';
 
 interface Props {
     id: string;
@@ -16,7 +16,8 @@ function App() {
     ]);
     const addTask = (text: string) => {
         const newTask = {
-            id: Date.now().toString(), text,
+            id: Date.now().toString(),
+            text,
         };
         setTasks([...tasks, newTask]);
     };
@@ -27,12 +28,16 @@ function App() {
         <div className="app">
             <AddTaskForm onAddTask={addTask}/>
             <div className="task-list">
-                {tasks.map((task) => (
-                    <Task key={task.id} id={task.id} text={task.text} onDelete={deleteTask}/>
+                {tasks.map(task => (
+                    <Task
+                        key={task.id}
+                        id={task.id}
+                        text={task.text}
+                        onDelete={deleteTask}/>
                 ))}
             </div>
         </div>
-    )
+    );
 }
 
-export default App
+export default App;

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState} from 'react';
 
 interface AddTask {
     onAddTask: (text: string) => void;
@@ -6,11 +6,11 @@ interface AddTask {
 }
 
 const AddTaskForm: React.FC<AddTask> = ({onAddTask}) => {
-    const [newText, setNewText] = useState("");
+    const [newText, setNewText] = useState('');
     const handleAddTask = () => {
         if (newText.trim()) {
             onAddTask(newText);
-            setNewText("");
+            setNewText('');
         }
     };
     return (
