@@ -1,0 +1,30 @@
+.app {
+    width: 250%;
+}
+
+.task-form {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.task-form__textarea {
+    width: 80%;
+    padding: 10px 5px;
+    margin-right: auto;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.task__delete {
+    background: transparent;
+    padding: 0px 10px;
+    cursor: pointer;
+}
