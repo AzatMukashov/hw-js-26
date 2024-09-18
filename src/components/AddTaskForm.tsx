@@ -1,11 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 
-interface Task {
-    newText: string;
-    onAddTask: () => void;
+interface AddTask {
+    // newText: string;
+    onAddTask: (text: string) => void;
+    // onTextChange: (text: string) => void;
+
 }
 
-const Task: React.FC<Task> = ({newText, onAddTask}) => {
+const AddTaskForm: React.FC<AddTask> = ({onAddTask}) => {
+    const [newText, setNewText] = useState("");
+    const handleAddTask = () => {
+        if (newText.trim()) {
+            onAddTask(newText);
+            setNewText("");
+        }
+    };
     return (
         <div className="task">
             <textarea
@@ -13,14 +22,16 @@ const Task: React.FC<Task> = ({newText, onAddTask}) => {
                 rows={1}
                 autoFocus
                 placeholder="Add new task"
-            >{newText}</textarea>
+                value={newText}
+                onChange={(e) => setNewText(e.target.value)}
+            />
             <button
                 className="task__submit"
                 type="button"
-                onClick={onAddTask}>Add
+                onClick={handleAddTask}>Add
             </button>
         </div>
     );
 };
 
-export default Task;
+export default AddTaskForm;
