@@ -14,9 +14,9 @@ const AddTaskForm: React.FC<AddTask> = ({onAddTask}) => {
         }
     };
     return (
-        <div className="task">
+        <div className="task-form">
             <textarea
-                className="task__textarea"
+                className="task-form__textarea"
                 rows={1}
                 autoFocus
                 placeholder="Add new task"
@@ -24,7 +24,7 @@ const AddTaskForm: React.FC<AddTask> = ({onAddTask}) => {
                 onChange={(e) => setNewText(e.target.value)}
             />
             <button
-                className="task__submit"
+                className="task-form__submit"
                 type="button"
                 onClick={handleAddTask}>Add
             </button>
